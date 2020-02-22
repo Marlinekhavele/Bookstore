@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "pages.apps.PagesConfig",
     "books.apps.BooksConfig",
+    "orders.apps.OrdersConfig",
 ]
 AUTH_USER_MODEL = "users.CustomUser"
 
@@ -161,3 +162,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 LOGIN_REDIRECT_URL = "home"
 ACCOUNT_LOGOUT_REDIRECT = "home"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+STRIPE_TEST_PUBLISHABLE_KEY = "pk_test_vIz1erm11CbNLvav4CvLuB6O006VrEKOUZ"
+STRIPE_TEST_SECRET_KEY = "sk_test_HIvbHWbglXmKgHHRr4F1XwaV002WGEtq86"
