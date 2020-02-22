@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # Local
     "users.apps.UsersConfig",
     "pages.apps.PagesConfig",
+    "books.apps.BooksConfig",
 ]
 AUTH_USER_MODEL = "users.CustomUser"
 
@@ -92,7 +93,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 DEFAULT_FROM_EMAIL = "admin@djangobookstore.com"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 WSGI_APPLICATION = "bookstore.wsgi.application"
 
 
