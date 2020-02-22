@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "allauth",
     "allauth.account",
+    "debug_toolbar",
     # Local
     "users.apps.UsersConfig",
     "pages.apps.PagesConfig",
@@ -52,7 +53,9 @@ INSTALLED_APPS = [
 ]
 AUTH_USER_MODEL = "users.CustomUser"
 
-
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -61,7 +64,11 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
+CACHE_MIDDLEWARE_ALIAS = "default"
+CACHE_MIDDLEWARE_SECONDS = 604800
+CACHE_MIDDLEWARE_KEY_PREFIX = ""
 
 ROOT_URLCONF = "bookstore.urls"
 
